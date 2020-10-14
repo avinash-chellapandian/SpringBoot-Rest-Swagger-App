@@ -16,4 +16,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 # Maven
-- task: SonarCloudAnalyze@1
+- task: SonarQubePublish@4
+  inputs:
+    pollingTimeoutSec: '300'
