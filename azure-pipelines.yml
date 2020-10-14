@@ -14,7 +14,7 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'clean compile package'
 # Maven
 - task: SonarQubePrepare@4
   inputs:
@@ -26,4 +26,4 @@ steps:
       sonar.projectVersion=1.0
 - task: SonarQubePublish@4
   inputs:
-    pollingTimeoutSec: '300'
+    pollingTimeoutSec: '100'
